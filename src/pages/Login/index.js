@@ -3,7 +3,7 @@ import { Container, Header, Texto, Texto2, HeaderButton, Texto3, Form, FormTitle
 import { TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
 
-export default function Login() {
+export default function Login({navigation}) {
 
   const [fonts] = useFonts({
     'Poppins': require('../../fonts/Poppins-Regular.ttf'),
@@ -19,7 +19,7 @@ export default function Login() {
       <Header>
         <Texto style={{fontFamily:'Poppins-Bold'}}>Novo aqui ?</Texto>
         <Texto2 style={{fontFamily:'Poppins'}}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, ex ratione. Aliquid!</Texto2>
-        <HeaderButton><Texto3 style={{fontFamily: 'Poppins-Bold'}}>CADASTRE-SE</Texto3></HeaderButton>
+        <HeaderButton onPress={() => navigation.navigate('Register')}><Texto3 style={{fontFamily: 'Poppins-Bold'}}>CADASTRE-SE</Texto3></HeaderButton>
       </Header>
 
       <Form>
