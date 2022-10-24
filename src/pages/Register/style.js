@@ -32,7 +32,7 @@ export const Email = styled.TextInput`
 export const Password = styled.TextInput`
   margin-left: 5%;
   height: 50px;
-  width: 280px;
+  width: 240px;
 `;
 
 export const FormButton = styled.TouchableOpacity`
@@ -91,4 +91,8 @@ export const InputView = styled.View`
   border-radius: 25px;
   padding: 15px;
   margin-bottom: 5%;
+`;
+
+export const IconEye = styled.TouchableOpacity`
+  margin-left: 4%;
 `;

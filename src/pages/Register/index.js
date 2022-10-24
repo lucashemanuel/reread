@@ -1,5 +1,5 @@
-import React from 'react';
-import { Container, Header, FormTitle, Form, Name, Email, Password, FormButton, ButtonText, HeaderText, HeaderTitle, HeaderButton, InputView } from './style';
+import React, {useState} from 'react';
+import { Container, Header, FormTitle, Form, Name, Email, Password, FormButton, ButtonText, HeaderText, HeaderTitle, HeaderButton, InputView, IconEye } from './style';
 import { useFonts } from 'expo-font';
 import {FontAwesome, FontAwesome5} from '@expo/vector-icons';
 
@@ -11,6 +11,8 @@ export default function Register({navigation}) {
   if (!fonts) {
     return null;
   }
+
+  const [hidePass, setHidePass] = useState(true);
 
   return (
    <Container>
@@ -29,18 +31,25 @@ export default function Register({navigation}) {
 
       <InputView>
         <FontAwesome5 name="lock" size={20}/>
-        <Password style={{fontFamily:'Poppins'}} secureTextEntry={true} placeholder="Senha"/>
+        <Password style={{fontFamily:'Poppins'}} secureTextEntry={hidePass} placeholder="Senha"/>
+
+        <IconEye onPress={() => setHidePass(!hidePass)}>
+          <FontAwesome5 name="eye" size={20}/>
+        </IconEye>
       </InputView>
 
-      <FormButton><ButtonText style={{fontFamily:'Poppins-Bold'}}>CADASTRAR</ButtonText></FormButton>
+      <FormButton>
+        <ButtonText style={{fontFamily:'Poppins-Bold'}}>CADASTRAR</ButtonText>
+      </FormButton>
     </Form>
     <Header>
       <HeaderTitle style={{fontFamily:'Poppins-Bold'}}>Já possui uma conta ?</HeaderTitle>
 
       <HeaderText style={{fontFamily:'Poppins'}} >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, ex ratione. Aliquid!</HeaderText>
-
-      <HeaderButton onPress={() => navigation.navigate('Login')} ><ButtonText style={{fontFamily:'Poppins-Bold'}}>ENTRAR</ButtonText></HeaderButton>
       
+      <HeaderButton onPress={() => navigation.navigate('Login')} >
+        <ButtonText style={{fontFamily:'Poppins-Bold'}}>ENTRAR</ButtonText>
+      </HeaderButton>
     </Header>
    </Container>
   );
