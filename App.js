@@ -5,8 +5,8 @@ import Routes from './src/routes';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    'Poppins': require('../../fonts/Poppins-Regular.ttf'),
-    'Poppins-Bold': require('../../fonts/Poppins-Bold.ttf'),
+    'Poppins': require('./src/fonts/Poppins-Regular.ttf'),
+    'Poppins-Bold': require('./src/fonts/Poppins-Bold.ttf'),
   });
   if (!fontsLoaded) {
     return null;
