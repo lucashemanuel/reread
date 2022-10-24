@@ -63,7 +63,7 @@ export const Email = styled.TextInput`
 export const Password = styled.TextInput`
   margin-left: 5%;
   height: 50px;
-  width: 280px;
+  width: 240px;
 `;
 
 export const Forgot = styled.Text`
@@ -84,10 +84,15 @@ export const FormButton = styled.TouchableOpacity`
 export const InputView = styled.View`
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   background-color: #f0f0f0;
   width: 330px;
   height: 50px;
   border-radius: 25px;
   padding: 15px;
   margin-bottom: 5%;
+`;
+
+export const IconEye = styled.TouchableOpacity`
+  margin-left: 4%;
 `;

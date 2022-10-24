@@ -1,5 +1,5 @@
-import React from 'react';
-import { Container, Header, Texto, Texto2, HeaderButton, Texto3, Form, FormTitle, Email, Password, Forgot, FormButton, InputView } from './style';
+import React, { useState } from 'react';
+import { Container, Header, Texto, Texto2, HeaderButton, Texto3, Form, FormTitle, Email, Password, Forgot, FormButton, InputView, IconEye } from './style';
 import { TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
 import {FontAwesome, FontAwesome5} from '@expo/vector-icons';
@@ -14,6 +14,7 @@ export default function Login({navigation}) {
     return null;
   }
 
+  const [hidePass, setHidePass] = useState(true);
 
 
   return (
@@ -34,7 +35,11 @@ export default function Login({navigation}) {
 
         <InputView> 
           <FontAwesome5 name="lock" size={20}/>
-          <Password style={{fontFamily: 'Poppins'}} placeholder="Senha" secureTextEntry={true}/>
+          <Password style={{fontFamily: 'Poppins'}} placeholder="Senha" secureTextEntry={hidePass}/>
+
+          <IconEye onPress={() => setHidePass(!hidePass)}>
+            <FontAwesome5 name="eye" size={20}/>
+          </IconEye>
         </InputView>
 
         <TouchableOpacity><Forgot style={{fontFamily: 'Poppins'}}>Esqueci minha senha</Forgot></TouchableOpacity>
