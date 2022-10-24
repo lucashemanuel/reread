@@ -34,7 +34,7 @@ export default function Register({navigation}) {
         <Password style={{fontFamily:'Poppins'}} secureTextEntry={hidePass} placeholder="Senha"/>
 
         <IconEye onPress={() => setHidePass(!hidePass)}>
-          <FontAwesome5 name="eye" size={20}/>
+          {hidePass ? <FontAwesome5 name="eye-slash" size={20}/> : <FontAwesome5 name="eye" size={20}/>}
         </IconEye>
       </InputView>
 

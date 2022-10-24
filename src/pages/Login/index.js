@@ -5,7 +5,6 @@ import { useFonts } from 'expo-font';
 import {FontAwesome, FontAwesome5} from '@expo/vector-icons';
 
 export default function Login({navigation}) {
-
   const [fonts] = useFonts({
     'Poppins': require('../../fonts/Poppins-Regular.ttf'),
     'Poppins-Bold': require('../../fonts/Poppins-Bold.ttf'),
@@ -38,7 +37,7 @@ export default function Login({navigation}) {
           <Password style={{fontFamily: 'Poppins'}} placeholder="Senha" secureTextEntry={hidePass}/>
 
           <IconEye onPress={() => setHidePass(!hidePass)}>
-            <FontAwesome5 name="eye" size={20}/>
+            {hidePass ? <FontAwesome5 name="eye-slash" size={20}/> : <FontAwesome5 name="eye" size={20}/>}
           </IconEye>
         </InputView>
 
