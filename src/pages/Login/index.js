@@ -1,17 +1,9 @@
 import React, { useState } from 'react';
 import { Container, Header, Texto, Texto2, HeaderButton, Texto3, Form, FormTitle, Email, Password, Forgot, FormButton, InputView, IconEye } from './style';
 import { TouchableOpacity } from 'react-native';
-import { useFonts } from 'expo-font';
 import {FontAwesome, FontAwesome5} from '@expo/vector-icons';
 
 export default function Login({navigation}) {
-  const [fonts] = useFonts({
-    'Poppins': require('../../fonts/Poppins-Regular.ttf'),
-    'Poppins-Bold': require('../../fonts/Poppins-Bold.ttf'),
-  });
-  if (!fonts) {
-    return null;
-  }
 
   const [hidePass, setHidePass] = useState(true);
 

@@ -1,16 +1,8 @@
 import React, {useState} from 'react';
 import { Container, Header, FormTitle, Form, Name, Email, Password, FormButton, ButtonText, HeaderText, HeaderTitle, HeaderButton, InputView, IconEye } from './style';
-import { useFonts } from 'expo-font';
 import {FontAwesome, FontAwesome5} from '@expo/vector-icons';
 
 export default function Register({navigation}) {
-  const [fonts] = useFonts({
-    'Poppins': require('../../fonts/Poppins-Regular.ttf'),
-    'Poppins-Bold': require('../../fonts/Poppins-Bold.ttf'),
-  });
-  if (!fonts) {
-    return null;
-  }
 
   const [hidePass, setHidePass] = useState(true);
 
