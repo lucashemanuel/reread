@@ -55,21 +55,15 @@ export const FormTitle = styled.Text`
 `;
 
 export const Email = styled.TextInput`
-  background-color: #f0f0f0;
-  width: 330px;
+  margin-left: 5%;
   height: 50px;
-  border-radius: 25px;
-  padding: 15px;
-  margin-bottom: 15px;
+  width: 280px;
 `;
 
 export const Password = styled.TextInput`
-background-color: #f0f0f0;
-  width: 330px;
+  margin-left: 5%;
   height: 50px;
-  border-radius: 25px;
-  padding: 15px;
-  margin-bottom: 25px;
+  width: 280px;
 `;
 
 export const Forgot = styled.Text`
@@ -85,4 +79,15 @@ export const FormButton = styled.TouchableOpacity`
   border-radius: 25px;
   width: 120px;
   height: 40px;
+`;
+
+export const InputView = styled.View`
+  flex-direction: row;
+  align-items: center;
+  background-color: #f0f0f0;
+  width: 330px;
+  height: 50px;
+  border-radius: 25px;
+  padding: 15px;
+  margin-bottom: 5%;
 `;

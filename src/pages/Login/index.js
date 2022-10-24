@@ -1,7 +1,8 @@
 import React from 'react';
-import { Container, Header, Texto, Texto2, HeaderButton, Texto3, Form, FormTitle, Email, Password, Forgot, FormButton } from './style';
+import { Container, Header, Texto, Texto2, HeaderButton, Texto3, Form, FormTitle, Email, Password, Forgot, FormButton, InputView } from './style';
 import { TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
+import {FontAwesome, FontAwesome5} from '@expo/vector-icons';
 
 export default function Login({navigation}) {
 
@@ -9,10 +10,11 @@ export default function Login({navigation}) {
     'Poppins': require('../../fonts/Poppins-Regular.ttf'),
     'Poppins-Bold': require('../../fonts/Poppins-Bold.ttf'),
   });
-
   if (!fonts) {
     return null;
   }
+
+
 
   return (
     <Container>
@@ -24,9 +26,19 @@ export default function Login({navigation}) {
 
       <Form>
         <FormTitle style={{fontFamily: 'Poppins-Bold'}}>Entrar</FormTitle>
-        <Email style={{fontFamily: 'Poppins'}} placeholder="Email"/>
-        <Password style={{fontFamily: 'Poppins'}} placeholder="Senha" secureTextEntry={true}/>
+
+        <InputView>
+          <FontAwesome name="envelope" size={20}/>
+          <Email style={{fontFamily: 'Poppins'}} placeholder="Email"/>
+        </InputView>
+
+        <InputView> 
+          <FontAwesome5 name="lock" size={20}/>
+          <Password style={{fontFamily: 'Poppins'}} placeholder="Senha" secureTextEntry={true}/>
+        </InputView>
+
         <TouchableOpacity><Forgot style={{fontFamily: 'Poppins'}}>Esqueci minha senha</Forgot></TouchableOpacity>
+
         <FormButton><Texto3>ENTRAR</Texto3></FormButton>
       </Form>
     </Container>
