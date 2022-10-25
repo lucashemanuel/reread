@@ -13,23 +13,27 @@ export const Header = styled.View`
   padding-left: 10%;
   padding-right: 10%;
   background-color: #3a86ff;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+
 `;
 
 export const Texto = styled.Text`
+  font-family: 'Poppins-Bold';
   color: #ffffff;
   font-size: 25px;
   margin-bottom: 5px;
 `;
 
 export const Texto2 = styled.Text`
+  font-family: 'Poppins';
   color: #ffffff;
   font-size: 15px;
   margin-bottom: 15px;
 `;
 
 export const Texto3 = styled.Text`
+font-family: 'Poppins-Bold';
   color: #ffffff;
   font-size: 17px;
 `;
@@ -50,23 +54,27 @@ export const Form = styled.View`
 `;
 
 export const FormTitle = styled.Text`
+  font-family: 'Poppins-Bold';
   font-size: 40px;
   margin-bottom: 15px;
 `;
 
 export const Email = styled.TextInput`
+  font-family: 'Poppins';
   margin-left: 5%;
   height: 50px;
   width: 280px;
 `;
 
 export const Password = styled.TextInput`
+  font-family: 'Poppins';
   margin-left: 5%;
   height: 50px;
   width: 240px;
 `;
 
 export const Forgot = styled.Text`
+  font-family: 'Poppins';
   color: #9e9e9e;
   margin-bottom: 15px;
 `;

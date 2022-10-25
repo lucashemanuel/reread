@@ -11,29 +11,29 @@ export default function Login({navigation}) {
   return (
     <Container>
       <Header>
-        <Texto style={{fontFamily:'Poppins-Bold'}}>Novo aqui ?</Texto>
-        <Texto2 style={{fontFamily:'Poppins'}}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, ex ratione. Aliquid!</Texto2>
-        <HeaderButton onPress={() => navigation.navigate('Register')}><Texto3 style={{fontFamily: 'Poppins-Bold'}}>CADASTRE-SE</Texto3></HeaderButton>
+        <Texto>Novo aqui ?</Texto>
+        <Texto2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis, ex ratione. Aliquid!</Texto2>
+        <HeaderButton onPress={() => navigation.navigate('Register')}><Texto3>CADASTRE-SE</Texto3></HeaderButton>
       </Header>
 
       <Form>
-        <FormTitle style={{fontFamily: 'Poppins-Bold'}}>Entrar</FormTitle>
+        <FormTitle>Entrar</FormTitle>
 
         <InputView>
           <FontAwesome name="envelope" size={20}/>
-          <Email style={{fontFamily: 'Poppins'}} placeholder="Email"/>
+          <Email placeholder="Email"/>
         </InputView>
 
         <InputView> 
           <FontAwesome5 name="lock" size={20}/>
-          <Password style={{fontFamily: 'Poppins'}} placeholder="Senha" secureTextEntry={hidePass}/>
+          <Password placeholder="Senha" secureTextEntry={hidePass}/>
 
           <IconEye onPress={() => setHidePass(!hidePass)}>
             {hidePass ? <FontAwesome5 name="eye-slash" size={20}/> : <FontAwesome5 name="eye" size={20}/>}
           </IconEye>
         </InputView>
 
-        <TouchableOpacity><Forgot style={{fontFamily: 'Poppins'}}>Esqueci minha senha</Forgot></TouchableOpacity>
+        <TouchableOpacity><Forgot>Esqueci minha senha</Forgot></TouchableOpacity>
 
         <FormButton><Texto3>ENTRAR</Texto3></FormButton>
       </Form>
