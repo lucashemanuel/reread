@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "reread-app",
+    "slug": "reread-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
