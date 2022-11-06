@@ -14,6 +14,17 @@ import {
 } from "./style";
 
 export default function FirstQuiz({ navigation }) {
+  const [value1, setValue1] = useState(1);
+  const [value2, setValue2] = useState(1);
+  const [value3, setValue3] = useState(1);
+  const [value4, setValue4] = useState(1);
+
+  const result = value1 + value2 + value3 + value4;
+
+  function handleSubmit() {
+    console.log(result);
+  }
+
   return (
     <Container>
       <QuizArea>
@@ -22,15 +33,39 @@ export default function FirstQuiz({ navigation }) {
           <QuestionText>
             1 - Você está confortável com seu nível de didática em sala de aula?
           </QuestionText>
-          <Radio.Group name="RadioGroup" defaultValue="3">
+          <Radio.Group
+            name="RadioGroup"
+            value={value1}
+            onChange={(nextValue) => {
+              setValue1(nextValue);
+            }}
+          >
             <Stack direction={{ base: "row" }} space={5}>
-              <Radio value="1" colorScheme="purple" size="sm" my={1}>
+              <Radio
+                value={10}
+                colorScheme="purple"
+                size="sm"
+                my={1}
+                onChange={setValue1}
+              >
                 <CheckText>Sim</CheckText>
               </Radio>
-              <Radio value="2" colorScheme="purple" size="sm" my={1}>
-                <CheckText>Provavelmente</CheckText>
+              <Radio
+                value={5}
+                colorScheme="purple"
+                size="sm"
+                my={1}
+                onChange={setValue1}
+              >
+                <CheckText>Parcialmente</CheckText>
               </Radio>
-              <Radio value="3" colorScheme="purple" size="sm" my={1}>
+              <Radio
+                value={1}
+                colorScheme="purple"
+                size="sm"
+                my={1}
+                onChange={setValue1}
+              >
                 <CheckText>Não</CheckText>
               </Radio>
             </Stack>
@@ -42,15 +77,39 @@ export default function FirstQuiz({ navigation }) {
             trabalho?
           </QuestionText>
 
-          <Radio.Group name="RadioGroup" defaultValue="3">
+          <Radio.Group
+            name="RadioGroup"
+            value={value2}
+            onChange={(nextValue) => {
+              setValue2(nextValue);
+            }}
+          >
             <Stack direction={{ base: "row" }} space={5}>
-              <Radio value="1" colorScheme="purple" size="sm" my={1}>
+              <Radio
+                value={10}
+                colorScheme="purple"
+                size="sm"
+                my={1}
+                onChange={setValue2}
+              >
                 <CheckText>Sim</CheckText>
               </Radio>
-              <Radio value="2" colorScheme="purple" size="sm" my={1}>
-                <CheckText>Provavelmente</CheckText>
+              <Radio
+                value={5}
+                colorScheme="purple"
+                size="sm"
+                my={1}
+                onChange={setValue2}
+              >
+                <CheckText>Parcialmente</CheckText>
               </Radio>
-              <Radio value="3" colorScheme="purple" size="sm" my={1}>
+              <Radio
+                value={1}
+                colorScheme="purple"
+                size="sm"
+                my={1}
+                onChange={setValue2}
+              >
                 <CheckText>Não</CheckText>
               </Radio>
             </Stack>
@@ -62,15 +121,39 @@ export default function FirstQuiz({ navigation }) {
             cunho da TI?
           </QuestionText>
 
-          <Radio.Group name="RadioGroup" defaultValue="3">
+          <Radio.Group
+            name="RadioGroup"
+            value={value3}
+            onChange={(nextValue) => {
+              setValue3(nextValue);
+            }}
+          >
             <Stack direction={{ base: "row" }} space={5}>
-              <Radio value="1" colorScheme="purple" size="sm" my={1}>
+              <Radio
+                value={10}
+                colorScheme="purple"
+                size="sm"
+                my={1}
+                onChange={setValue3}
+              >
                 <CheckText>Sim</CheckText>
               </Radio>
-              <Radio value="2" colorScheme="purple" size="sm" my={1}>
-                <CheckText>Provavelmente</CheckText>
+              <Radio
+                value={5}
+                colorScheme="purple"
+                size="sm"
+                my={1}
+                onChange={setValue3}
+              >
+                <CheckText>Parcialmente</CheckText>
               </Radio>
-              <Radio value="3" colorScheme="purple" size="sm" my={1}>
+              <Radio
+                value={1}
+                colorScheme="purple"
+                size="sm"
+                my={1}
+                onChange={setValue3}
+              >
                 <CheckText>Não</CheckText>
               </Radio>
             </Stack>
@@ -81,22 +164,46 @@ export default function FirstQuiz({ navigation }) {
             4 - Seu nível de aptidão com tecnologias é bom?
           </QuestionText>
 
-          <Radio.Group name="RadioGroup" defaultValue="3">
+          <Radio.Group
+            name="RadioGroup"
+            value={value4}
+            onChange={(nextValue) => {
+              setValue4(nextValue);
+            }}
+          >
             <Stack direction={{ base: "row" }} space={5}>
-              <Radio value="1" colorScheme="purple" size="sm" my={1}>
+              <Radio
+                value={10}
+                colorScheme="purple"
+                size="sm"
+                my={1}
+                onChange={setValue4}
+              >
                 <CheckText>Sim</CheckText>
               </Radio>
-              <Radio value="2" colorScheme="purple" size="sm" my={1}>
-                <CheckText>Provavelmente</CheckText>
+              <Radio
+                value={5}
+                colorScheme="purple"
+                size="sm"
+                my={1}
+                onChange={setValue4}
+              >
+                <CheckText>Parcialmente</CheckText>
               </Radio>
-              <Radio value="3" colorScheme="purple" size="sm" my={1}>
+              <Radio
+                value={1}
+                colorScheme="purple"
+                size="sm"
+                my={1}
+                onChange={setValue4}
+              >
                 <CheckText>Não</CheckText>
               </Radio>
             </Stack>
           </Radio.Group>
         </Questions>
         <ButtonArea>
-          <Previous onPress={() => navigation.goBack()}>
+          <Previous onPress={handleSubmit}>
             <ButtonText>Anterior</ButtonText>
           </Previous>
           <Next onPress={() => navigation.navigate("SecondQuiz")}>
