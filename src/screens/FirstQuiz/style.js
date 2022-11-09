@@ -22,6 +22,8 @@ export const QuizArea = styled.View`
 `;
 
 export const Questions = styled.View`
+  padding-right: 5%;
+  padding-left: 5%;
   align-items: center;
   justify-content: center;
   justify-content: space-evenly;

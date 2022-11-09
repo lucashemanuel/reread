@@ -22,7 +22,7 @@ import {
   Keyboard,
 } from "react-native";
 import { FontAwesome, FontAwesome5 } from "@expo/vector-icons";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "../../firebase";
 
 export default function Login({ navigation }) {
   const [review, setReview] = useState(true);

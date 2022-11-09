@@ -12,17 +12,25 @@ import {
   QuizArea,
   Title,
 } from "./style";
+import { collection, addDoc, database } from "../../firebase";
 
 export default function FirstQuiz({ navigation }) {
-  const [value1, setValue1] = useState(1);
-  const [value2, setValue2] = useState(1);
-  const [value3, setValue3] = useState(1);
-  const [value4, setValue4] = useState(1);
+  const [value1, setValue1] = useState(0);
+  const [value2, setValue2] = useState(0);
+  const [value3, setValue3] = useState(0);
+  const [value4, setValue4] = useState(0);
+  const pontos = value1 + value2 + value3 + value4;
 
-  const result = value1 + value2 + value3 + value4;
-
-  function handleSubmit() {
-    console.log(result);
+  async function handleSubmit() {
+    try {
+      const docRef = await addDoc(collection(database, "result_quiz"), {
+        categoria: "Produção/Ensino",
+        pontos: pontos,
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
   }
 
   return (
@@ -60,7 +68,7 @@ export default function FirstQuiz({ navigation }) {
                 <CheckText>Parcialmente</CheckText>
               </Radio>
               <Radio
-                value={1}
+                value={0}
                 colorScheme="purple"
                 size="sm"
                 my={1}
@@ -73,8 +81,8 @@ export default function FirstQuiz({ navigation }) {
         </Questions>
         <Questions>
           <QuestionText>
-            2 - O seu bem estar está impactando diretamente o seu desempenho no
-            trabalho?
+            2 - Em algum nível a locomoção de sua residência a seu local de
+            trabalho impacta seu desempenho?
           </QuestionText>
 
           <Radio.Group
@@ -104,7 +112,7 @@ export default function FirstQuiz({ navigation }) {
                 <CheckText>Parcialmente</CheckText>
               </Radio>
               <Radio
-                value={1}
+                value={0}
                 colorScheme="purple"
                 size="sm"
                 my={1}
@@ -117,8 +125,8 @@ export default function FirstQuiz({ navigation }) {
         </Questions>
         <Questions>
           <QuestionText>
-            3 - Na sua área de atuação existe a demanda de uso de tecnologia do
-            cunho da TI?
+            3 - Você apresenta constante demanda sobre produção de materiais
+            para a atuação de suas atividades?
           </QuestionText>
 
           <Radio.Group
@@ -148,7 +156,7 @@ export default function FirstQuiz({ navigation }) {
                 <CheckText>Parcialmente</CheckText>
               </Radio>
               <Radio
-                value={1}
+                value={0}
                 colorScheme="purple"
                 size="sm"
                 my={1}
@@ -161,7 +169,8 @@ export default function FirstQuiz({ navigation }) {
         </Questions>
         <Questions>
           <QuestionText>
-            4 - Seu nível de aptidão com tecnologias é bom?
+            4 - Você consegue atender as duas demandas de trabalho atuais de
+            forma eficaz?
           </QuestionText>
 
           <Radio.Group
@@ -191,7 +200,7 @@ export default function FirstQuiz({ navigation }) {
                 <CheckText>Parcialmente</CheckText>
               </Radio>
               <Radio
-                value={1}
+                value={0}
                 colorScheme="purple"
                 size="sm"
                 my={1}
