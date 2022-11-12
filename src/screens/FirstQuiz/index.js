@@ -12,7 +12,7 @@ import {
   QuizArea,
   Title,
 } from "./style";
-import { collection, addDoc, database } from "../../firebase";
+import { collection, addDoc, setDoc, database, doc } from "../../firebase";
 
 export default function FirstQuiz({ navigation }) {
   const [value1, setValue1] = useState(0);
@@ -28,6 +28,7 @@ export default function FirstQuiz({ navigation }) {
         pontos: pontos,
       });
       console.log("Document written with ID: ", docRef.id);
+      navigation.navigate("SecondQuiz");
     } catch (e) {
       console.error("Error adding document: ", e);
     }
@@ -42,7 +43,7 @@ export default function FirstQuiz({ navigation }) {
             1 - Você está confortável com seu nível de didática em sala de aula?
           </QuestionText>
           <Radio.Group
-            name="RadioGroup"
+            name="Produção/Ensino"
             value={value1}
             onChange={(nextValue) => {
               setValue1(nextValue);
@@ -86,7 +87,7 @@ export default function FirstQuiz({ navigation }) {
           </QuestionText>
 
           <Radio.Group
-            name="RadioGroup"
+            name="Produção/Ensino"
             value={value2}
             onChange={(nextValue) => {
               setValue2(nextValue);
@@ -130,7 +131,7 @@ export default function FirstQuiz({ navigation }) {
           </QuestionText>
 
           <Radio.Group
-            name="RadioGroup"
+            name="Produção/Ensino"
             value={value3}
             onChange={(nextValue) => {
               setValue3(nextValue);
@@ -174,7 +175,7 @@ export default function FirstQuiz({ navigation }) {
           </QuestionText>
 
           <Radio.Group
-            name="RadioGroup"
+            name="Produção/Ensino"
             value={value4}
             onChange={(nextValue) => {
               setValue4(nextValue);
@@ -212,10 +213,10 @@ export default function FirstQuiz({ navigation }) {
           </Radio.Group>
         </Questions>
         <ButtonArea>
-          <Previous onPress={handleSubmit}>
+          <Previous onPress={() => navigation.goBack()}>
             <ButtonText>Anterior</ButtonText>
           </Previous>
-          <Next onPress={() => navigation.navigate("SecondQuiz")}>
+          <Next onPress={handleSubmit}>
             <ButtonText>Próximo</ButtonText>
           </Next>
         </ButtonArea>

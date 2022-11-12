@@ -4,7 +4,13 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  setDoc,
+  doc,
+  addDoc,
+} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBYVwv-a4zswyPTH82WPkkWfko3chdVI9Q",
@@ -23,8 +29,10 @@ export {
   app,
   auth,
   database,
+  doc,
   collection,
   addDoc,
+  setDoc,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   getFirestore,
