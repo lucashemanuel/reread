@@ -29,10 +29,13 @@ export default function Quiz({ navigation }) {
           seu tipo de perfil.
         </QuestionText>
         <ButtonArea>
-          <Previous onPress={() => navigation.goBack()}>
+          <Previous activeOpacity={0.8} onPress={() => navigation.goBack()}>
             <ButtonText>Anterior</ButtonText>
           </Previous>
-          <Next onPress={() => navigation.navigate("FirstQuiz")}>
+          <Next
+            activeOpacity={0.8}
+            onPress={() => navigation.navigate("FirstQuiz")}
+          >
             <ButtonText>Próximo</ButtonText>
           </Next>
         </ButtonArea>

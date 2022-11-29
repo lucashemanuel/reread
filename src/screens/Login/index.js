@@ -55,7 +55,10 @@ export default function Login({ navigation }) {
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
               ex ratione. Aliquid!
             </Texto2>
-            <HeaderButton onPress={() => navigation.navigate("Register")}>
+            <HeaderButton
+              activeOpacity={0.5}
+              onPress={() => navigation.navigate("Register")}
+            >
               <Texto3>Cadastre-se</Texto3>
             </HeaderButton>
           </Header>
@@ -90,11 +93,11 @@ export default function Login({ navigation }) {
               </IconEye>
             </InputView>
 
-            <TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.6}>
               <Forgot>Esqueci minha senha</Forgot>
             </TouchableOpacity>
 
-            <FormButton onPress={handleLogin}>
+            <FormButton activeOpacity={0.8} onPress={handleLogin}>
               <Texto3>Entrar</Texto3>
             </FormButton>
           </Form>

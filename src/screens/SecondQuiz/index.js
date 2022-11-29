@@ -24,16 +24,16 @@ export default function SecondQuiz({ navigation }) {
 
   async function handleSubmit() {
     try {
-      const docRef = await addDoc(collection(database, "result_quiz"), {
+      await setDoc(doc(database, "result_quiz", "Bem-estar"), {
         categoria: "Bem-estar",
         pontos: pontos,
       });
-      addDoc(collection(database, "result_quiz"), {
+      setDoc(doc(database, "result_quiz", "Deficiências"), {
         categoria: "Deficiências",
         pontos: value4,
       });
 
-      console.log("Document written with ID: ", docRef.id);
+      //console.log("Document written with ID: ", docRef.id);
       navigation.navigate("ThirdQuiz");
     } catch (e) {
       console.error("Error adding document: ", e);
@@ -216,10 +216,10 @@ export default function SecondQuiz({ navigation }) {
           </Radio.Group>
         </Questions>
         <ButtonArea>
-          <Previous onPress={() => navigation.goBack()}>
+          <Previous activeOpacity={0.8} onPress={() => navigation.goBack()}>
             <ButtonText>Anterior</ButtonText>
           </Previous>
-          <Next onPress={handleSubmit}>
+          <Next activeOpacity={0.8} onPress={handleSubmit}>
             <ButtonText>Próximo</ButtonText>
           </Next>
         </ButtonArea>

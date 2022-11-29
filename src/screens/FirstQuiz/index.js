@@ -23,11 +23,11 @@ export default function FirstQuiz({ navigation }) {
 
   async function handleSubmit() {
     try {
-      const docRef = await addDoc(collection(database, "result_quiz"), {
+      await setDoc(doc(database, "result_quiz", "Produção e Ensino"), {
         categoria: "Produção/Ensino",
         pontos: pontos,
       });
-      console.log("Document written with ID: ", docRef.id);
+      //console.log("Document written w/ith ID: ", docRef.id);
       navigation.navigate("SecondQuiz");
     } catch (e) {
       console.error("Error adding document: ", e);
@@ -213,10 +213,10 @@ export default function FirstQuiz({ navigation }) {
           </Radio.Group>
         </Questions>
         <ButtonArea>
-          <Previous onPress={() => navigation.goBack()}>
+          <Previous activeOpacity={0.8} onPress={() => navigation.goBack()}>
             <ButtonText>Anterior</ButtonText>
           </Previous>
-          <Next onPress={handleSubmit}>
+          <Next activeOpacity={0.8} onPress={handleSubmit}>
             <ButtonText>Próximo</ButtonText>
           </Next>
         </ButtonArea>

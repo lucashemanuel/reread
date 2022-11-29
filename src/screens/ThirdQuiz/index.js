@@ -12,7 +12,7 @@ import {
   QuizArea,
   Texto,
 } from "./style";
-import { database, collection, addDoc } from "../../firebase";
+import { database, collection, addDoc, setDoc, doc } from "../../firebase";
 
 export default function ThirdQuiz({ navigation }) {
   const [value1, setValue1] = useState(0);
@@ -23,16 +23,16 @@ export default function ThirdQuiz({ navigation }) {
 
   async function handleSubmit() {
     try {
-      const docRef = await addDoc(collection(database, "result_quiz"), {
+      await setDoc(doc(database, "result_quiz", "Cinema e Cultura"), {
         categoria: "Cinema/Cultura",
         pontos: pontos,
       });
-      addDoc(collection(database, "result_quiz"), {
+      setDoc(doc(database, "result_quiz", "Leitura e Alfabetização"), {
         categoria: "Leitura/Alfabetização",
         pontos: value4,
       });
 
-      console.log("Document written with ID: ", docRef.id);
+      //console.log("Document written with ID: ", docRef.id);
       navigation.navigate("FourthQuiz");
     } catch (e) {
       console.error("Error adding document: ", e);
@@ -211,10 +211,10 @@ export default function ThirdQuiz({ navigation }) {
           </Radio.Group>
         </Questions>
         <ButtonArea>
-          <Previous onPress={() => navigation.goBack()}>
+          <Previous activeOpacity={0.8} onPress={() => navigation.goBack()}>
             <ButtonText>Anterior</ButtonText>
           </Previous>
-          <Next onPress={handleSubmit}>
+          <Next activeOpacity={0.8} onPress={handleSubmit}>
             <ButtonText>Próximo</ButtonText>
           </Next>
         </ButtonArea>

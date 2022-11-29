@@ -9,7 +9,7 @@ export const Container = styled.View`
 
 export const Texto = styled.Text`
   font-family: "Poppins-Bold";
-  font-size: 30;
+  font-size: 30px;
 `;
 
 export const QuizArea = styled.View`
@@ -18,7 +18,7 @@ export const QuizArea = styled.View`
   background-color: #ffffff;
   width: 90%;
   height: 95%;
-  border-radius: 25;
+  border-radius: 25px;
 `;
 
 export const Questions = styled.View`
@@ -30,7 +30,7 @@ export const Questions = styled.View`
   background-color: #f0f0f0;
   width: 80%;
   height: 18%;
-  border-radius: 25;
+  border-radius: 25px;
   margin-bottom: 5%;
 `;
 

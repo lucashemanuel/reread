@@ -81,7 +81,9 @@ export default function Register({ navigation }) {
             </InputView>
 
             <FormButton>
-              <ButtonText onPress={handleRegister}>Cadastrar</ButtonText>
+              <ButtonText activeOpacity={0.6} onPress={handleRegister}>
+                Cadastrar
+              </ButtonText>
             </FormButton>
           </Form>
 
@@ -93,7 +95,10 @@ export default function Register({ navigation }) {
               ex ratione. Aliquid!
             </HeaderText>
 
-            <HeaderButton onPress={() => navigation.navigate("Login")}>
+            <HeaderButton
+              activeOpacity={0.5}
+              onPress={() => navigation.navigate("Login")}
+            >
               <ButtonText>Entrar</ButtonText>
             </HeaderButton>
           </Header>

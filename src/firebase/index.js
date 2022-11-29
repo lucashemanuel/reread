@@ -10,6 +10,10 @@ import {
   setDoc,
   doc,
   addDoc,
+  query,
+  orderBy,
+  limit,
+  getDoc,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -26,6 +30,10 @@ const auth = getAuth(app);
 const database = getFirestore(app);
 
 export {
+  getDoc,
+  query,
+  orderBy,
+  limit,
   app,
   auth,
   database,

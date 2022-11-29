@@ -9,7 +9,7 @@ export const Container = styled.View`
 
 export const Title = styled.Text`
   font-family: "Poppins-Bold";
-  font-size: 30;
+  font-size: 30px;
 `;
 
 export const QuizArea = styled.View`
@@ -19,7 +19,7 @@ export const QuizArea = styled.View`
   justify-content: space-evenly;
   background-color: #ffffff;
   width: 90%;
-  border-radius: 25;
+  border-radius: 25px;
 `;
 
 export const Questions = styled.View`
@@ -28,14 +28,14 @@ export const Questions = styled.View`
   background-color: #f0f0f0;
   width: 80%;
   height: 18%;
-  border-radius: 25;
+  border-radius: 25px;
   margin-bottom: 5%;
 `;
 
 export const QuestionText = styled.Text`
   text-align: justify;
   font-family: "Poppins";
-  font-size: 17;
+  font-size: 17px;
 `;
 
 export const ButtonArea = styled.View`

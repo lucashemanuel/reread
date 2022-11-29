@@ -51,6 +51,8 @@ export const Form = styled.View`
   flex: 2;
   align-items: center;
   justify-content: center;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 `;
 
 export const FormTitle = styled.Text`
